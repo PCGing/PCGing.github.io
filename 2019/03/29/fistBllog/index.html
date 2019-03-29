@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hello World - Hexo</title>
+    <title>Java基础系列（一）：基础数据类型 - Hexo</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="PCG,"> 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pr,"> 
+    <meta name="description" content="一、前言今天我们来聊一下Java这门语言的数据类型，众所周知，Java是一种强类型语言。在Java中，一共有8种基本类型，其中4种整形，2种浮点类型，1种用于表示Unicode编码的字符单元的字符类,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -35,7 +35,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">Java基础系列（一）：基础数据类型</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -53,22 +53,49 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Java基础系列（一）：基础数据类型</h1>
         <div class="stuff">
             <span>三月 29, 2019</span>
             
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Java基础系列（一）：基础数据类型/">Java基础系列（一）：基础数据类型</a></li></ul>
+
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>今天我们来聊一下Java这门语言的数据类型，众所周知，Java是一种强类型语言。在Java中，一共有8种基本类型，其中4种整形，2种浮点类型，1种用于表示Unicode编码的字符单元的字符类型char和1种用于表示真值的boolean类型</p>
+<h1 id="二、整形"><a href="#二、整形" class="headerlink" title="二、整形"></a>二、整形</h1><p>整形用于表示没有小数部分的数值，允许为负。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:center">存储大小</th>
+<th style="text-align:right">取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td style="text-align:center">4字节</td>
+<td style="text-align:right">-2,147,483,648 ~ 2,147,483,647</td>
+</tr>
+<tr>
+<td>short</td>
+<td style="text-align:center">2字节</td>
+<td style="text-align:right">-32,768 ~ 32,767</td>
+</tr>
+<tr>
+<td>long</td>
+<td style="text-align:center">8字节</td>
+<td style="text-align:right">-9,223,372,036,854,775,808 ~ 9223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>byte</td>
+<td style="text-align:center">1字节</td>
+<td style="text-align:right">-128 ~ 127</td>
+</tr>
+</tbody>
+</table>
+<p>在Java中，整形的范围与运行Java代码的机器无关。这解决了软件从一个平台移植到另外一个平台，或者在同一个平台的不同操作系统之间进行移植给程序员带来的麻烦。<br>长整形（Long类型）数值后有一个后缀 L 或 l（这里建议不要使用小写的 l 来标识，因为在某些字体的格式下，1和 l 几乎没有任何区别，给月阅读的人带来很大的困扰）。<br>十六进制数值前缀为 0x 或 0X，这里需要说一点，八进制的前缀是0，比如010，这样的写法比较容易让人混淆，所以我们一般不要使用八进制来表示数据。<br>二进制数值的前缀为 0b 或 0B，例如0b1001所代表的十进制数据就是9。<br>从Java7开始，可以在数字字面量加下划线，比如1_000_000，这些下划线的作用仅仅是使代码的易读性更高，编译器在编译的时候会去除这些下划线。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -91,7 +118,7 @@
     </div>
     
         <div class="side">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、整形"><span class="toc-number">2.</span> <span class="toc-text">二、整形</span></a></li></ol>
         </div>
     
 </div>
