@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://pcging.github.io/"/>
   <updated>2019-03-29T07:36:18.365Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://pcging.github.io/</id>
   
   <author>
     <name>PCG</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java基础系列（一）：基础数据类型</title>
-    <link href="http://yoursite.com/2019/03/29/fistBllog/"/>
-    <id>http://yoursite.com/2019/03/29/fistBllog/</id>
+    <link href="https://pcging.github.io/2019/03/29/fistBllog/"/>
+    <id>https://pcging.github.io/2019/03/29/fistBllog/</id>
     <published>2019-03-29T03:46:57.000Z</published>
     <updated>2019-03-29T07:36:18.365Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="javabasic" scheme="http://yoursite.com/tags/javabasic/"/>
+      <category term="javabasic" scheme="https://pcging.github.io/tags/javabasic/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/03/29/hello-world/"/>
-    <id>http://yoursite.com/2019/03/29/hello-world/</id>
+    <link href="https://pcging.github.io/2019/03/29/hello-world/"/>
+    <id>https://pcging.github.io/2019/03/29/hello-world/</id>
     <published>2019-03-29T01:53:25.582Z</published>
     <updated>2019-03-29T01:53:25.596Z</updated>
     
