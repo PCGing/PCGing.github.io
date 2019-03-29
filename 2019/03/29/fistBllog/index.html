@@ -97,7 +97,22 @@
 </table>
 <p>在Java中，整形的范围与运行Java代码的机器无关。这解决了软件从一个平台移植到另外一个平台，或者在同一个平台的不同操作系统之间进行移植给程序员带来的麻烦。<br>长整形（Long类型）数值后有一个后缀 L 或 l（这里建议不要使用小写的 l 来标识，因为在某些字体的格式下，1和 l 几乎没有任何区别，给月阅读的人带来很大的困扰）。<br>十六进制数值前缀为 0x 或 0X，这里需要说一点，八进制的前缀是0，比如010，这样的写法比较容易让人混淆，所以我们一般不要使用八进制来表示数据。<br>二进制数值的前缀为 0b 或 0B，例如0b1001所代表的十进制数据就是9。<br>从Java7开始，可以在数字字面量加下划线，比如1_000_000，这些下划线的作用仅仅是使代码的易读性更高，编译器在编译的时候会去除这些下划线。</p>
 <p><div align="right"><img src="/img/viYoung.dib" alt="微信扫一扫，关注原创公众号"></div></p>
+<p><div id="gitalk-container"></div></p>
+<p><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"></p>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '7858edbbb52489c0e85a',
+        clientSecret: '92468b4eb22bc3a97a9ee950fcd1a0d01e43e396',
+        repo: 'https://github.com/PCGing/PCGing.github.io',
+        owner: 'https://github.com/PCGing/PCGing.github.io',
+        admin: ['PCG'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
 
+    gitalk.render('gitalk-container')
+</script>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src>
@@ -113,7 +128,7 @@
             
         </div>
         
-    <div id="gitalk-container" class="comment link" data-ae="true" data-ci data-cs data-r="https://github.com/PCGing/PCGing.github.io.git" data-o="PCGing.github.io" data-a="PCG" data-d="false">查看评论</div>
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="7858edbbb52489c0e85a" data-cs="92468b4eb22bc3a97a9ee950fcd1a0d01e43e396" data-r="https://github.com/PCGing/PCGing.github.io" data-o="https://github.com/PCGing/PCGing.github.io" data-a="PCG" data-d="false">查看评论</div>
 
 
     </div>
