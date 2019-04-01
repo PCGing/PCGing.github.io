@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://pcging.github.io/"/>
+  <link href="https://pcging.cn/"/>
   <updated>2019-04-01T09:06:46.891Z</updated>
-  <id>https://pcging.github.io/</id>
+  <id>https://pcging.cn/</id>
   
   <author>
     <name>PCG</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java基础系列（二）：运算符</title>
-    <link href="https://pcging.github.io/2019/03/29/operator/"/>
-    <id>https://pcging.github.io/2019/03/29/operator/</id>
+    <link href="https://pcging.cn/2019/03/29/operator/"/>
+    <id>https://pcging.cn/2019/03/29/operator/</id>
     <published>2019-03-29T03:46:57.000Z</published>
     <updated>2019-04-01T09:06:46.891Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="javabasic" scheme="https://pcging.github.io/tags/javabasic/"/>
+      <category term="javabasic" scheme="https://pcging.cn/tags/javabasic/"/>
     
   </entry>
   
   <entry>
     <title>Java基础系列（一）：基础数据类型</title>
-    <link href="https://pcging.github.io/2019/03/29/basicDataType/"/>
-    <id>https://pcging.github.io/2019/03/29/basicDataType/</id>
+    <link href="https://pcging.cn/2019/03/29/basicDataType/"/>
+    <id>https://pcging.cn/2019/03/29/basicDataType/</id>
     <published>2019-03-29T03:46:57.000Z</published>
     <updated>2019-04-01T08:33:30.002Z</updated>
     
@@ -58,7 +58,7 @@
     </summary>
     
     
-      <category term="javabasic" scheme="https://pcging.github.io/tags/javabasic/"/>
+      <category term="javabasic" scheme="https://pcging.cn/tags/javabasic/"/>
     
   </entry>
   
