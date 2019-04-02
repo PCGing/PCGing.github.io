@@ -128,6 +128,252 @@
 </table>
 <p><strong>注意</strong>：自增和自减有两种形态：”前缀“和”后缀“，当单独使用的时候，两者并无区别，都是使当前操作的数值 +1 或 -1 ，但是当在表达式中使用的时候，二者就不太一样了，前缀形式会先完成 + 1；而后缀形式则会采用变量原来的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int m = 7;</span><br><span class="line">int n = 7;</span><br><span class="line">int a = 2 * ++m; // a = 16, m = 8</span><br><span class="line">int b = 2 * n++; // b = 14, n = 7</span><br></pre></td></tr></table></figure></p>
 <h1 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h1><p>关系运算符的结果为布尔值（ true / false） 设 a = 1，b = 2</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td style="text-align:center">运算符两侧数值是否相等，如果相等结果为true</td>
+<td style="text-align:right">a == b为false</td>
+</tr>
+<tr>
+<td>!=</td>
+<td style="text-align:center">运算符两侧数值是否不相等，如果不相等结果为true</td>
+<td style="text-align:right">a != b为true</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:center">运算符左侧的数值大于右侧，结果为true</td>
+<td style="text-align:right">b &gt; a为true</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td style="text-align:center">运算符左侧的数值小于右侧，结果为true</td>
+<td style="text-align:right">a &lt; b为true</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td style="text-align:center">运算符左侧的数值大于等于右侧，结果为true</td>
+<td style="text-align:right">b &gt;= a为true</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td style="text-align:center">运算符左侧的数值小于等于右侧，结果为true</td>
+<td style="text-align:right">a &lt;= b为true</td>
+</tr>
+</tbody>
+</table>
+<h1 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h1><p>Java定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)和字节型(byte)等类型。</p>
+<p>位运算符作用在所有的位上，并且<strong>按位运算</strong>。假设a = 60，b = 13；他们的二进制格式表示将如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = 0011 1100;</span><br><span class="line">b = 0000 1101;</span><br><span class="line"></span><br><span class="line">a &amp; b = 0000 1100</span><br><span class="line">a | b = 0011 1101</span><br><span class="line">a ^ b = 0011 0001</span><br><span class="line">~a = 1100 0011</span><br><span class="line">a &lt;&lt; 2 = 1111 0000</span><br><span class="line">a &gt;&gt; 2 = 1111</span><br><span class="line">a &gt;&gt;&gt; 2 = 0000 1111</span><br></pre></td></tr></table></figure>
+<p>运算规则如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">操作符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">&amp;</td>
+<td style="text-align:center">同1为1，否则为0</td>
+<td style="text-align:right">a &amp; b = 0000 1100</td>
+</tr>
+<tr>
+<td style="text-align:right">&#124;</td>
+<td style="text-align:center">同0为0，否则为1</td>
+<td style="text-align:right">a &#124; b == 0011 1101 </td>
+</tr>
+<tr>
+<td style="text-align:right">^</td>
+<td style="text-align:center">相同为0，否则为1</td>
+<td style="text-align:right">a ^ b = 0011 0001</td>
+</tr>
+<tr>
+<td style="text-align:right">~</td>
+<td style="text-align:center">按位取反</td>
+<td style="text-align:right">~a = 1100 0011</td>
+</tr>
+<tr>
+<td style="text-align:right">&lt;&lt;</td>
+<td style="text-align:center">按位左移运算符，左操作数按位左移右操作数指定的位数</td>
+<td style="text-align:right">a &lt;&lt; 2 即 1111 0000</td>
+</tr>
+<tr>
+<td style="text-align:right">&gt;&gt;</td>
+<td style="text-align:center">按位右移运算符，左操作数按位右移右操作数指定的位数</td>
+<td style="text-align:right">a &gt;&gt; 2 即 1111</td>
+</tr>
+<tr>
+<td style="text-align:right">&gt;&gt;&gt;</td>
+<td style="text-align:center">按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td style="text-align:right">a &gt;&gt;&gt; 2 即 0000 1111</td>
+</tr>
+</tbody>
+</table>
+<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h1><p>a为true，b为false</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">操作符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">&amp;</td>
+<td style="text-align:center">逻辑与运算符，当运算符两侧都为true时，结果才为true，否则为false</td>
+<td style="text-align:right">a &amp; b为false</td>
+</tr>
+<tr>
+<td style="text-align:right">&amp;&amp;</td>
+<td style="text-align:center">逻辑与运算符，当运算符两侧都为true时，结果才为true，否则为false，如果左侧为false将不再执行运算符右侧</td>
+<td style="text-align:right">a &amp;&amp; b为false</td>
+</tr>
+<tr>
+<td style="text-align:right">&#124;</td>
+<td style="text-align:center">逻辑或运算符，当运算符两侧都为false时，结果才为false，否则为true</td>
+<td style="text-align:right">a &#124; b为true</td>
+</tr>
+<tr>
+<td style="text-align:right">&#124;&#124;</td>
+<td style="text-align:center">逻辑或运算符，当运算符两侧都为false时，结果才为false，否则为true，如果左侧为true将不再执行运算符右侧</td>
+<td style="text-align:right">a &#124;&#124; b为true</td>
+</tr>
+<tr>
+<td style="text-align:right">!</td>
+<td style="text-align:center">逻辑非运算符，如果运算符右侧为true，则结果为false，反之亦然</td>
+<td style="text-align:right">!a为false，!b为true</td>
+</tr>
+</tbody>
+</table>
+<h1 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h1><table>
+<thead>
+<tr>
+<th style="text-align:right">操作符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">=</td>
+<td style="text-align:center">基础的赋值运算符，将右边的值赋给左边</td>
+<td style="text-align:right">c = a + b 就是将 a + b 的值赋给 c</td>
+</tr>
+</tbody>
+</table>
+<h1 id="条件运算符（-）"><a href="#条件运算符（-）" class="headerlink" title="条件运算符（? : ）"></a>条件运算符（? : ）</h1><p>条件运算符也被称为三元运算符。该运算符有3个操作数，并且需要判断布尔表达式的值。该运算符主要是判断把哪个值赋给变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int a = 10;</span><br><span class="line">int b;</span><br><span class="line">// 如果 a 等于 1 成立，则设置 b 为 20，否则为 30</span><br><span class="line">b = (a == 1) ? 20 : 30; //此时b = 30</span><br><span class="line">b = (a == 10) ? 20 : 30;//此时b = 20</span><br></pre></td></tr></table></figure>
+<h1 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h1><p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。</p>
+<p>instanceof运算符使用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vehicle a = new Car();</span><br><span class="line">boolean result = a instanceof Car;</span><br><span class="line">System.out.println(result);</span><br></pre></td></tr></table></figure>
+<p>结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true</span><br></pre></td></tr></table></figure></p>
+<h1 id="Java运算符优先级"><a href="#Java运算符优先级" class="headerlink" title="Java运算符优先级"></a>Java运算符优先级</h1><p>最高优先级在该表上方，最低优先级在该表底部</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">类别</th>
+<th style="text-align:center">操作符</th>
+<th style="text-align:right">关联性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">后缀</td>
+<td style="text-align:center">(),[],<strong>.</strong>(点操作符)</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">一元</td>
+<td style="text-align:center">++,–,!</td>
+<td style="text-align:right">右到左</td>
+</tr>
+<tr>
+<td style="text-align:right">乘性</td>
+<td style="text-align:center">*,/,%</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">加性</td>
+<td style="text-align:center">+,-</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">移位</td>
+<td style="text-align:center">&gt;&gt;,&gt;&gt;&gt;,&lt;&lt;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">关系</td>
+<td style="text-align:center">&gt;,&gt;=,=,&lt;=,&lt;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">相等</td>
+<td style="text-align:center">==，!=</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">按位与</td>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">按位异或</td>
+<td style="text-align:center">^</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">按位或</td>
+<td style="text-align:center">&#124;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">逻辑与</td>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">逻辑或</td>
+<td style="text-align:center">&#124;&#124;</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">条件（三元）</td>
+<td style="text-align:center">? :</td>
+<td style="text-align:right">左到右</td>
+</tr>
+<tr>
+<td style="text-align:right">赋值</td>
+<td style="text-align:center">=，+=，-=等等</td>
+<td style="text-align:right">右到左</td>
+</tr>
+<tr>
+<td style="text-align:right">逗号</td>
+<td style="text-align:center">，</td>
+<td style="text-align:right">左到右</td>
+</tr>
+</tbody>
+</table>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.runoob.com/java/java-operators.html" target="_blank" rel="noopener">Java运算符|菜鸟驿站</a><br><a href="https://book.douban.com/subject/30326049/" target="_blank" rel="noopener">Core Java Volume Ⅰ-Fundamentals</a></p>
+<h1 id="上一节"><a href="#上一节" class="headerlink" title="上一节"></a>上一节</h1><p><a href="http://pcging.cn/2019/03/29/basicDataType/">Java基础系列（一）：基础数据类型</a></p>
+<p>本节转自<a href="https://blog.csdn.net/vi_young_95/article/details/80558433" target="_blank" rel="noopener">https://blog.csdn.net/vi_young_95/article/details/80558433</a></p>
+<div align="center"><img src="/img/viYoung.dib" alt="微信扫一扫，关注原创公众号" title="微信扫一扫，关注原创公众号">微信扫一扫，关注原创公众号</div>
+
+
+
+
+
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -148,7 +394,7 @@
     </div>
     
         <div class="side">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算术运算符"><span class="toc-number">2.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关系运算符"><span class="toc-number">3.</span> <span class="toc-text">关系运算符</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算术运算符"><span class="toc-number">2.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关系运算符"><span class="toc-number">3.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#位运算符"><span class="toc-number">4.</span> <span class="toc-text">位运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">5.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#赋值运算符"><span class="toc-number">6.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件运算符（-）"><span class="toc-number">7.</span> <span class="toc-text">条件运算符（? : ）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#instanceof-运算符"><span class="toc-number">8.</span> <span class="toc-text">instanceof 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java运算符优先级"><span class="toc-number">9.</span> <span class="toc-text">Java运算符优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">10.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#上一节"><span class="toc-number">11.</span> <span class="toc-text">上一节</span></a></li></ol>
         </div>
     
 </div>
