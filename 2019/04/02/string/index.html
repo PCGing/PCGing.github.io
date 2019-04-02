@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Java基础系列（三）：字符串 - PCG的个人博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="PCG,"> 
+    <meta name="description" content="PCG的个人博客,前言从概念上来讲，Java字符串就是Unicode字符序列。例如，”Java&amp;#8482;” 由5个Unicode字符J、a、v、a和&amp;#8482;。Java没有内置的字符串类型，而是在标准Java,"> 
+    <meta name="author" content="PCG"> 
+    <link rel="alternative" href="/atom.xml" title="PCG的个人博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">PCG的个人博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://pcging.cn"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Java基础系列（三）：字符串</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">Java基础系列（三）：字符串</h1>
+        <div class="stuff">
+            <span>四月 02, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javabasic/">javabasic</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从概念上来讲，Java字符串就是Unicode字符序列。例如，”Java&#8482;” 由5个Unicode字符J、a、v、a和&#8482;。Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类，叫做String。每个用双引号括起来的字符串都是String类的一个实例。</p>
+<h1 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h1><p>String类的substring()方法可以从一个较大的字符串里提取出一个字串。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting  = &quot;Hello&quot;;</span><br><span class="line">String s = greeting.substring(0,3); //s = &quot;Hel&quot;</span><br></pre></td></tr></table></figure></p>
+<p>substring()方法的第二个参数是不想复制的第一个位置。这里要复制的位置为0、1、2（从0到2，包括0和2）的字符。在substring()中从0开始计数，直到3为止，但不包括3。substring()有一个优点：容易计算字符串的长度。即substring(a,b)的长度为b-a。例如，字符串”Hel”的长度为3-0=3</p>
+<h1 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h1><p>与绝大多数的程序设计语言一样，Java语言允许使用 + 号连接（拼接）两个字符串。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String expletive = &quot;Expletive&quot;;</span><br><span class="line">String PG13 = &quot;deleted&quot;;</span><br><span class="line">String message = expletive + PG13; //message = &quot;Expletivedeleted&quot;</span><br></pre></td></tr></table></figure>
+<p>当将一个字符串与一个非字符串的值进行拼接时，后者会被自动转换成字符串。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int age = 13;</span><br><span class="line">String rating = &quot;PG&quot; + age; //rating = &quot;PG13&quot;</span><br></pre></td></tr></table></figure>
+<p>如果需要将多个字符串连接在一起，并用定界符分离，可以使用静态join()方法。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String size = String.join(&quot; / &quot;, &quot;S&quot;, &quot;M&quot;, &quot;L&quot;, &quot;XL&quot;);</span><br><span class="line">//size = &quot;S / M / L / XL&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="不可变字符串"><a href="#不可变字符串" class="headerlink" title="不可变字符串"></a>不可变字符串</h1><p>由于不能修改Java字符串中的字符，所以在Java文档中将String类对象称为不可变字符串，如同数字3永远是数字3一样，字符串”Hello”永远包含字符H、e、l、l、o的代码单元序列，而不能修改其中的任何一个字符。当然，可以修改字符串常量，让它引用另一个字符串</p>
+<p>不可变字符串的优点是：编译器可以让字符串共享，即各种字符串存储在公共的存储池中，字符串变量值也存储于存储池中相应的位置，如果复制一个字符串变量，原始字符串与复制的字符串共享相同的字符。</p>
+<p>Java的设计者认为共享所带来的高效率远远胜与提取，拼接字符串所带来的低效率，因为我们很少需要修改字符串，更多的，我们是对字符串进行比较。</p>
+<h1 id="检测字符串是否相等"><a href="#检测字符串是否相等" class="headerlink" title="检测字符串是否相等"></a>检测字符串是否相等</h1><p>可以使用equals()方法判断两个字符串是否相等，对于表达式：</p>
+<p><code>s.equals(t)</code></p>
+<p>如果字符串s与字符串t相等，则返回true；否则返回false。需要注意：s和t可以是字符串变量，也可以是字符串字面量。如果要检测两个字符串是否相等，而不区分大小写，可以使用equalslgnoreCase()方法。例如：</p>
+<p><code>&quot;Hello&quot;.equalslgnoreCase(&quot;hello&quot;); //结果为true</code></p>
+<p><strong>一定不要使用==运算符检测两个字符串是否相等！！！</strong>这个运算符只是确定两个字符串是否放在同一个位置上，当然，如果字符串放置在同一个位置上，他们必然相等。但是，完全有可能将内容相同的多个字符串的拷贝放在不同的位置上。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;123&quot;;</span><br><span class="line">String b = &quot;123&quot;;</span><br><span class="line">String c = new String(&quot;123&quot;);</span><br><span class="line">String d = new String(&quot;123&quot;);</span><br><span class="line">System.out.println(a==b);           //true</span><br><span class="line">System.out.println(b==c);           //false</span><br><span class="line">System.out.println(c==d);           //false</span><br><span class="line">System.out.println(c.equals(d));    //true</span><br><span class="line">System.out.println(&quot;hello&quot;.substring(0,3)==&quot;hel&quot;)   //false</span><br></pre></td></tr></table></figure></p>
+<p>因为只有字符串常量是共享的，而重新定义、截取、拼接产生的结果都不是共享的，所以千万不要用 == 运算符测试字符串的相等性！</p>
+<h1 id="空串与null"><a href="#空串与null" class="headerlink" title="空串与null"></a>空串与null</h1><p>空串 <code>&quot;&quot;</code>是长度为0的字符串。可以调用以下代码检查一个字符串是否为空：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;&quot;</span><br><span class="line">if(str.length() == 0)&#123;</span><br><span class="line">    //字符串为&quot;&quot;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;&quot;</span><br><span class="line">if(str.equals(&quot;&quot;))&#123;</span><br><span class="line">    //字符串为&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>空串是一个Java对象，有自己的长度（0）和内容（空）。不过，String变量还可以存放一个特殊的值，名为null，这表示目前没有任何对象与该变量关联。</p>
+<h1 id="常用String-API"><a href="#常用String-API" class="headerlink" title="常用String API"></a>常用String API</h1><ul>
+<li><strong>char charAt (int index) </strong>返回给定位置的代码单元。除非对底层的代码单元感兴趣，否则不需要调用这个方法。</li>
+<li><strong>int compareTo(String other) </strong>按照字典顺序，如果字符串位于other之前，返回一个负数；如果字符串位于other之后，返回一个正数；如果两个字符串相等，返回0</li>
+<li><strong>boolean equals(Object other) </strong>如果字符串与other相等，返回true</li>
+<li><strong>boolean equalsIgnoreCase(String other) </strong>如果字符串与other相等（忽略大小写），返回true</li>
+<li><strong>boolean startWith(String prefix) </strong></li>
+<li><strong>boolean endWith(String suffix) </strong>如果字符串以prefix（suffix）开头（结尾），则返回true</li>
+<li><strong>int indexOf(String str)</strong></li>
+<li><strong>int indexOf(String str, int fromIndex)</strong></li>
+<li><strong>int indexOf(int cp)</strong></li>
+<li><strong>int indexOf(int cp, int fromIndex) </strong>返回与字符串str或代码点cp匹配的第一个子串的开始位置。这个位置从索引0或fromIndex开始计算。如果原始串中不存在str，返回-1</li>
+<li><strong>int lastIndexOf(String str)</strong></li>
+<li><strong>int lastIndexOf(String str, int fromIndex)</strong></li>
+<li><strong>int lastIndexOf(int cp)</strong></li>
+<li><strong>int lastIndexOf(int cp, int fromIndex) </strong>返回与字符串str或代码点cp匹配的最后一个子串的位置。这个位置从原始串尾端或fromIndex开始计算</li>
+<li><strong>int length() </strong>返回字符串的长度</li>
+<li><strong>String replace(CharSequence oldString, CharSequence newString) </strong>返回一个新字符串，这个字符串用newString代替原始字符串中的所有oldString。可以用String或StringBuilder对象作为CharSequence参数</li>
+<li><strong>String substring(int beginIndex)</strong></li>
+<li><strong>String substring(int beginIndex, int endIndex) </strong>返回一个新字符串。这个字符串包含原始字符串中从beginIndex到串尾或endIndex - 1的所有代码单元</li>
+<li><strong>String toLowerCase()</strong></li>
+<li><strong>String toUpperCase() </strong>返回一个新字符串，这个字符串将原始字符串中的大写字母改为小写，或者将原始字符串中的所有小写字母改成了大写字母。</li>
+<li><strong>String trim() </strong>返回一个新字符串，这个字符串将删除了原始字符串头部和尾部的空格。</li>
+<li><strong>String join(CharSequence delimiter, CharSequence…elements) </strong>返回一个新字符串，用给定的定界符连接所有元素。</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://book.douban.com/subject/30326049/" target="_blank" rel="noopener">Core Java Volume Ⅰ-Fundamentals</a></p>
+<p>上一节：<a href="http://pcging.cn/2019/03/29/operator/">Java基础专题（二）：运算符</a></p>
+<p>本节转自<a href="https://blog.csdn.net/vi_young_95/article/details/80724492" target="_blank" rel="noopener">https://blog.csdn.net/vi_young_95/article/details/80724492</a></p>
+<div align="center"><img src="/img/viYoung.dib" alt="微信扫一扫，关注原创公众号" title="微信扫一扫，关注原创公众号">微信扫一扫，关注原创公众号</div>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+
+    </div>
+    
+        <div class="side">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字串"><span class="toc-number">2.</span> <span class="toc-text">字串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#拼接"><span class="toc-number">3.</span> <span class="toc-text">拼接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不可变字符串"><span class="toc-number">4.</span> <span class="toc-text">不可变字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#检测字符串是否相等"><span class="toc-number">5.</span> <span class="toc-text">检测字符串是否相等</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#空串与null"><span class="toc-number">6.</span> <span class="toc-text">空串与null</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用String-API"><span class="toc-number">7.</span> <span class="toc-text">常用String API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">8.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
